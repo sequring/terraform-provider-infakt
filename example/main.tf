@@ -1,4 +1,4 @@
-resource "infakt_server" "my-server-name" {
-	uuid_count = "1"
+resource "infakt_client" "my-first-client" {
+  uuid_count = "1"
 }
 

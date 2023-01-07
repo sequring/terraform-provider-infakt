@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     infakt = {
-      source = "sequring/infakt"
-      version = "0.2.2"
+      source  = "sequring/infakt"
+      version = "0.2.3"
     }
   }
 }

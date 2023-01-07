@@ -7,12 +7,12 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
-func resourceServer() *schema.Resource {
+func resourceClient() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceServerCreate,
-		Read:   resourceServerRead,
-		Update: resourceServerUpdate,
-		Delete: resourceServerDelete,
+		Create: resourceClientCreate,
+		Read:   resourceClientRead,
+		Update: resourceClientUpdate,
+		Delete: resourceClientDelete,
 
 		Schema: map[string]*schema.Schema{
 			"uuid_count": &schema.Schema{
@@ -23,7 +23,7 @@ func resourceServer() *schema.Resource {
 	}
 }
 
-func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
+func resourceClientCreate(d *schema.ResourceData, m interface{}) error {
 	uuid_count := d.Get("uuid_count").(string)
 
 	d.SetId(uuid_count)
@@ -35,18 +35,18 @@ func resourceServerCreate(d *schema.ResourceData, m interface{}) error {
 	}
 	defer resp.Body.Close()
 
-	return resourceServerRead(d, m)
+	return resourceClientRead(d, m)
 }
 
-func resourceServerRead(d *schema.ResourceData, m interface{}) error {
+func resourceClientRead(d *schema.ResourceData, m interface{}) error {
 	return nil
 }
 
-func resourceServerUpdate(d *schema.ResourceData, m interface{}) error {
-	return resourceServerRead(d, m)
+func resourceClientUpdate(d *schema.ResourceData, m interface{}) error {
+	return resourceClientRead(d, m)
 }
 
-func resourceServerDelete(d *schema.ResourceData, m interface{}) error {
+func resourceClientDelete(d *schema.ResourceData, m interface{}) error {
 	d.SetId("")
 	return nil
 }
