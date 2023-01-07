@@ -6,6 +6,7 @@ import (
 	"github.com/sequring/terraform-provider-infakt/infakt"
 )
 
+// main function
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
 		ProviderFunc: func() terraform.ResourceProvider {
