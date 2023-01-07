@@ -9,4 +9,5 @@ terraform {
 
 provider "infakt" {
   # Configuration options
+  token = "123-123-123-123"
 }
